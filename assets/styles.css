@@ -1,0 +1,456 @@
+a {
+    text-decoration: none !important;
+    color:unset !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color:unset !important;
+}
+
+#singlearity-app .js-plotly-plot .plotly .modebar {
+    display:none;
+}
+
+/* responsive font sizes */
+.font-xl {
+    font-size: min(32px, 7vw);
+}
+
+.font-lg {
+    font-size: min(21px, 5.5vw);
+}
+
+.font-md {
+    font-size: min(17px, 4vw);
+}
+
+.font-sm {
+    font-size: min(15px, 3.5vw);
+}
+
+.font-xs {
+    font-size: min(17px, 4vw);
+}
+
+/* application specification */
+.logo {
+    width:250px;
+}
+
+.picture-size {
+    height: 200px;
+}
+
+#singlearity-app .navbar-dark .navbar-toggler:focus {
+    outline: 0;
+}
+
+.navbar-list {
+    justify-content: flex-end;
+}
+
+/* dropdown menu  */
+.dropdown-menu.show {
+    background-color:  #f0602b;
+}
+.dropdown-menu.show .dropdown-item:hover {
+    background-color:  #ff6200;
+    color:black;
+}
+/* end dropdown menu */
+
+
+/* action abutton submit */
+.action-button-submit {
+    color:white;
+    background-color:  #f0602b;
+    border: none;
+}
+#singlearity-app .action-button-submit:active, #singlearity-app .action-button-submit:focus {
+    background-color:  #f0602b;
+    box-shadow: none;
+}
+
+.action-button-submit:hover {
+    background-color:  #c54d21;
+}
+/* end button submit */
+
+/* action button */
+.action-button {
+    color:white;
+    background-color:  #6a6464;
+    border: none;
+}
+#singlearity-app .action-button:active, #singlearity-app .action-button:focus {
+    background-color:  #6a6464;
+    box-shadow: none;
+}
+
+.action-button:hover {
+    background-color:  #7d7171;
+}
+
+/* action button */
+
+
+.sc-brqgnP.iBXht{
+    width:100%;
+}
+
+.width-100{
+    width:100%;
+}
+
+.boxed  {
+    width:70%;
+}
+
+/* Color to the theme switcher */
+:root {
+    --bgColor: #fff;
+  	--textDefault: #000;
+    --primary: rgb(88, 75, 66);
+    --secondary: #282828;
+    --terciary: rgb(164, 209, 200);
+}
+
+:root[data-theme='dark'] {
+	--bgColor: #000;
+  	--textDefault: #fff;
+    --primary: #ACC2FF;
+    --secondary: #FFAFD0;
+    --terciary: #86E1B3;
+}
+
+.headerColor {
+    background-color: var(--primary);
+}
+
+.navbarColor {
+    background-color: var(--secondary);
+}
+
+.textBackground {
+    background:var(--terciary);
+}
+
+.text-color {
+    color: var(--textDefault);
+}
+
+.displayColor {
+    background-color: var(--secondary);
+}
+
+
+.primary {
+    background-color: var(--primary);
+}
+
+.singlearity-font{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+
+.txt-white {
+    color:#E1E2E5;
+}
+
+
+.padding-def {
+    padding: 24px 24px 10px 24px;
+}
+
+.white {
+    color: white;
+}
+
+.red {
+    color: red;
+}
+
+.light {
+   color: #ffffffbf;
+}
+
+.dark {
+    color: #393939;
+}
+
+.bgGray {
+    background-color: #3B5998;
+}
+
+.bgLight {
+    background: #adc1c3;
+}
+
+.bgDark {
+    background: #082b36;
+}
+
+
+/* position */
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+/* display */
+
+.inline-block {
+    display: inline-block;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+/* alingment */
+
+.text-center {
+    text-align: center;
+}
+
+.row-center{
+    justify-content: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+
+/* spacing */
+
+.padding8 {
+    padding: 8px;
+}
+
+.padding16 {
+    padding: 16px;
+}
+
+.padding24 {
+    padding: 24px;
+}
+
+.padding32 {
+    padding: 32px;
+}
+
+
+.paddingtop16 {
+    padding: 16px 0;
+}
+
+.paddingtop32 {
+    padding: 32px 0;
+}
+
+/* #singlearity-app .form-check-input:checked {
+  background-color: #ff6200;
+  border-color: #ff6200;
+} */
+
+/* #checklist-selected-style
+  .custom-control-input:checked
+  ~ .custom-control-label::before {
+  background-color: #fa7268;
+  border-color: #ea6258;
+} */
+
+#singlearity-app .custom-control-input:checked~.custom-control-label::before {
+    background-color: #ff6200;
+    border-color: rgb(255, 98, 0);
+}
+
+/* .custom-control-label:before{
+    background-color:red;
+  } */
+
+  .form-check {
+    position: relative;
+}
+.form-check .form-check-input {
+    cursor: pointer;
+    opacity: 0;
+    z-index: 999;
+    width: 18px;
+    height: 18px;
+}
+
+.form-check .form-check-label {
+    margin-left: 8px;
+}
+
+.form-check .checkbox-custom {
+    position: absolute; 
+    top: 4px; 
+    left: 0; 
+    height: 16px; 
+    width: 16px; 
+    border: 1px solid #adb5bd;
+    border-radius: 4px;
+}
+.form-check .form-check-input:checked ~ .checkbox-custom { 
+    background-color: rgb(255, 98, 0);
+    border: none;
+} 
+.checkbox-custom:after { 
+    content: ""; 
+    position: absolute; 
+    display: none; 
+} 
+.form-check .form-check-input:checked ~ .checkbox-custom:after { 
+    display: block; 
+} 
+.form-check .checkbox-custom:after { 
+    left: 5px; 
+    bottom: 5px; 
+    width: 2px; 
+    height: 2px; 
+    border: solid white; 
+} 
+
+
+.label-text {
+position: relative;
+left: 10px;
+}
+
+.bottom8 {
+    margin-bottom: 8px;
+}
+
+.bottom16 {
+    margin-bottom: 16px;
+}
+
+.bottom24 {
+    margin-bottom: 24px;
+}
+
+.bottom32 {
+    margin-bottom: 32px;
+}
+
+.bottom40 {
+    margin-bottom: 40px;
+}
+
+.bottom64 {
+    margin-bottom: 64px;
+}
+
+.top8 {
+    margin-top: 8px;
+}
+
+.top16 {
+    margin-top: 16px;
+}
+
+.top24 {
+    margin-top: 24px;
+}
+
+.top32 {
+    margin-top: 32px;
+}
+
+.top40{
+    margin-top: 40px;
+}
+
+
+/* border */
+.border-none {
+    border: none;
+}
+
+.radius32 {
+    border-radius: 32px;
+}
+
+.radius16 {
+    border-radius: 16px;
+}
+
+.radius12 {
+    border-radius: 16px;
+}
+
+/* specific styles */
+
+.male-icons i {
+    font-size: 10rem;
+}
+
+.info-sliders span {
+    font-size: 20px;
+}
+
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active {
+    background: #839496;
+}
+
+
+.min-height-display {
+    min-height: 85px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1200px) {
+
+    .boxed {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    .boxed {
+        width: 100%;
+    }
+
+    .picture-size {
+        height:150px;
+    }
+
+}
+
+@media screen and (max-width: 559px) {
+
+    .logo {
+        width: 200px;
+    }
+
+    .picture-size {
+        height:150px;
+    }
+}
+
+#singlearity-app #inning-slider {
+    padding: 0;
+}
