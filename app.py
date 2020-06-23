@@ -12,7 +12,7 @@ import dash_table as dt
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
-from components.navbar import navbar
+from components.navbar import *
 from components.visualizations import *
 from components.utils import *
 from plotly import graph_objects as go
@@ -90,8 +90,9 @@ app.layout = html.Div([
         ], width=10, md=10, lg=6)
     ], className="row-center bottom32"),
     # container with all app content (dynamic)
-    dbc.Container(id="tabs-content-inline",
-                  style={"maxWidth": "1360px", "minHeight": "100vh"})
+    dbc.Container(dcc.Loading(html.Div(id="tabs-content-inline"), type="circle"),
+                  style={"maxWidth": "1360px", "minHeight": "80vh"}),
+    # html.Div(id="page-content")
 
 ], id="singlearity-app", style={'overflow': 'hidden'})
 
@@ -151,23 +152,23 @@ tab3 = dbc.Row([
             width={"offset": 0, "size": 12},
             md={"offset": 2, "size": 8},
             lg={"offset": 0, "size": 6}, className="bottom40")
-
-
 ])
 
 
 @app.callback(Output('tabs-content-inline', 'children'),
               [Input('tabs-styled-with-inline', 'value')])
 def render_content(tab):
-
+    layout = []
     if tab == 'tab-1':
-        return tab1
-
+        layout = tab1
     elif tab == 'tab-2':
-        return tab2
-
+        layout = tab2
     elif tab == 'tab-3':
-        return tab3
+        layout = tab3
+    else:
+        layout = html.Div("Not found")
+
+    return layout
 
 
 @app.callback(Output('df-sharing', 'children'),
