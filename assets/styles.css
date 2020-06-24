@@ -285,7 +285,11 @@ a:hover {
     background-color:red;
   } */
 
-  .form-check {
+.position-relative {
+    position: relative;
+}
+
+.form-check {
     position: relative;
 }
 .form-check .form-check-input {

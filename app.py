@@ -109,7 +109,7 @@ app.layout = html.Div([
         ], id="singlearity-app", style={'overflow': 'hidden'})],
 
         id="page_content")
-])
+], className="position-relative")
 
 
 tab1 = dbc.Row([
