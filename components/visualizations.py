@@ -18,7 +18,7 @@ def funnel_chart():
                         "Funnel": [tmp["Funnel"].sum()]})
     tmp = tmp.append(df2, ignore_index=True, sort=True)
     tmp.sort_values("Funnel", ascending=False, inplace=True)
-    print(tmp)
+
     fig = go.Figure(go.Funnel(
 
         y=tmp['index'],
@@ -59,7 +59,14 @@ def table_show(df):
                  for c in ["Company Name", "email", "phone", "SocialMedia", "Costs"]],
         page_size=10,
         style_table={'minHeight': '330px', "maxHeight": "330px",
-                     "maxWidth": "1360px", 'overflowX': 'scroll'},
+                     'textAlign': "left",
+                     "maxWidth": "1360px", },
+        style_cell_conditional=[
+            {
+                'if': {'column_id': c},
+                'minWidth': '150px', 'maxWidth': '280px',
+                'textAlign': "left"
+            } for c in ['Company Name', 'email', 'phone', 'SocialMedia', "Costs"]],
         style_as_list_view=True,
     )
 

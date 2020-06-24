@@ -39,7 +39,10 @@ def navbar(logo="/assets/logo-placeholder.png", height="35px"):
                 dbc.Row(
                     [
                         dbc.Col(
-                            html.Img(src=logo, style={"height": height}, className="width-100"), className="logo")
+                            html.Img(src=logo, style={
+                                     "height": height}, className="width-100"),
+                            width={"offset": 3, "size": 8}, md={"offset": 0, "size": 8}, lg={"offset": 0, "size": 8},
+                            className="logo")
                     ],
                     align="center"
                 ),

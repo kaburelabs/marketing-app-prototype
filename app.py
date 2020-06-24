@@ -16,7 +16,8 @@ from components.navbar import *
 from components.visualizations import *
 from components.utils import *
 from plotly import graph_objects as go
-
+import dash_trich_components as dtc
+import dash_trich_components as dtc
 
 df = pd.read_csv(
     "marketing_data.csv", sep=",", index_col=[0])
@@ -70,31 +71,45 @@ tab_style = {
 
 # dynamic app layout
 app.layout = html.Div([
-    # navbar,
-    navbar(logo="assets/logo-placeholder.png", height="50px"),
-    html.Div(id="df-sharing", style={"display": "none"}),
-    html.Div(id="comparison-infos", children=["AS", 70, 1],
-             style={"display": "none"}),
+    dtc.SideBar([
+        dtc.SideBarItem(id='id_1', label="Home", icon="fas fa-home"),
+        dtc.SideBarItem(id='id_2', label="Dashboard",
+                        icon="fas fa-chart-line"),
+        dtc.SideBarItem(id='id_3', label="Reports & Tables",
+                        icon="far fa-list-alt"),
+        dtc.SideBarItem(id='id_4', label="Infos",
+                        icon="fas fa-info-circle"),
+        dtc.SideBarItem(id='id_5', label="Settings", icon="fas fa-cog"),
+    ], bg_color="#282828"),
+    html.Div([
+        html.Div([
+            # navbar,
+            navbar(logo="assets/logo-placeholder.png", height="50px"),
+            html.Div(id="df-sharing", style={"display": "none"}),
+            html.Div(id="comparison-infos", children=["AS", 70, 1],
+                     style={"display": "none"}),
 
-    dbc.Row([
-        dbc.Col([
-            dcc.Tabs(id="tabs-styled-with-inline", value='tab-1',
-                     children=[
-                         dcc.Tab(label='Segments', value='tab-1',
-                                 selected_style=tab_selected_style, style=tab_style),
-                         dcc.Tab(label='SandBox', value='tab-2',
-                                 selected_style=tab_selected_style, style=tab_style),
-                         dcc.Tab(label='Orchestration', value='tab-3',
-                                 selected_style=tab_selected_style, style=tab_style),
-                     ])
-        ], width=10, md=10, lg=6)
-    ], className="row-center bottom32"),
-    # container with all app content (dynamic)
-    dbc.Container(dcc.Loading(html.Div(id="tabs-content-inline"), type="circle"),
-                  style={"maxWidth": "1360px", "minHeight": "80vh"}),
-    # html.Div(id="page-content")
+            dbc.Row([
+                    dbc.Col([
+                        dcc.Tabs(id="tabs-styled-with-inline", value='tab-1',
+                                 children=[
+                                     dcc.Tab(label='Segments', value='tab-1',
+                                             selected_style=tab_selected_style, style=tab_style),
+                                     dcc.Tab(label='SandBox', value='tab-2',
+                                             selected_style=tab_selected_style, style=tab_style),
+                                     dcc.Tab(label='Orchestration', value='tab-3',
+                                             selected_style=tab_selected_style, style=tab_style),
+                                 ])
+                    ], width=10, md=10, lg=6)
+                    ], className="row-center bottom32"),
 
-], id="singlearity-app", style={'overflow': 'hidden'})
+            dbc.Container(html.Div(id="tabs-content-inline"),
+                          style={"maxWidth": "1360px", "minHeight": "100vh"}),
+
+        ], id="singlearity-app", style={'overflow': 'hidden'})],
+
+        id="page_content")
+])
 
 
 tab1 = dbc.Row([
@@ -135,7 +150,7 @@ tab2 = dbc.Row([
 
 tab3 = dbc.Row([
     dbc.Col([html.Div(id="tab3-val",
-                      className="width-100")],
+                      className="width-100", style={"maxHeight": "330px"})],
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
             lg={"offset": 1, "size": 10},
@@ -159,15 +174,20 @@ tab3 = dbc.Row([
               [Input('tabs-styled-with-inline', 'value')])
 def render_content(tab):
     layout = []
+    print("Tab", tab == 'tab-1', tab == 'tab-2', tab == 'tab-3')
+
     if tab == 'tab-1':
+        print("entrou1")
         layout = tab1
     elif tab == 'tab-2':
+        print("entrou2")
         layout = tab2
     elif tab == 'tab-3':
+        print("entrou3")
         layout = tab3
     else:
         layout = html.Div("Not found")
-
+    # print(layout)
     return layout
 
 
