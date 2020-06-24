@@ -154,7 +154,7 @@ tab3 = dbc.Row([
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
             lg={"offset": 1, "size": 10},
-            className="bottom40"),
+            className="bottom40", style={"minHeight": "350px"}),
     dbc.Col([dcc.Graph(id="fig3-bar1", figure=bar_chart_3_browser(df))],
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
