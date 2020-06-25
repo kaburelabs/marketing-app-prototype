@@ -276,6 +276,11 @@ a:hover {
   border-color: #ea6258;
 } */
 
+.border-bold {
+    border: 5px solid darkslategray;
+}
+
+
 #singlearity-app .custom-control-input:checked~.custom-control-label::before {
     background-color: #ff6200;
     border-color: rgb(255, 98, 0);
@@ -288,6 +293,7 @@ a:hover {
 .position-relative {
     position: relative;
 }
+
 
 .form-check {
     position: relative;

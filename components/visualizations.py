@@ -30,7 +30,7 @@ def funnel_chart():
         connector={"line": {"color": "royalblue", "dash": "dot", "width": 3}})
     )
     fig.update_layout(title="CORE CUSTOMER LOOKALIKE PROFILES",
-                      title_x=.5, margin=dict(t=50, b=0, r=0, l=0))
+                      title_x=.5, margin=dict(t=50))
     return fig
 
 
@@ -47,7 +47,7 @@ def bar_chart(df):
     )])
 
     fig.update_layout(title="ALERTS",
-                      title_x=.5, margin=dict(t=50, b=0, r=0, l=0))
+                      title_x=.5, margin=dict(t=50))
     return fig
 
 
@@ -56,7 +56,7 @@ def table_show(df):
     table = dt.DataTable(
         data=df.to_dict('records'),
         columns=[{'id': c, 'name': c}
-                 for c in ["Company Name", "email", "phone", "SocialMedia", "Costs"]],
+                 for c in ["Company Name", "email", "phone", "SocialMedia", "Costs", "Customer Address"]],
         page_size=10,
         style_table={'minHeight': '330px', "maxHeight": "330px",
                      'textAlign': "left",
@@ -78,7 +78,7 @@ def bar_chart_2(df):
     fig = px.bar(df, y='Priority', x="Costs",
                  color='Campaing', barmode="group", orientation="h", title="POWER BI DASHBOARD")
 
-    fig.update_layout(title_x=.5, margin=dict(t=50, b=0, r=0, l=0))
+    fig.update_layout(title_x=.5, margin=dict(t=50))
 
     return fig
 
@@ -90,7 +90,7 @@ def bar_chart_2_produc(df):
     fig = px.bar(tmp, x='index', y="Products",
                  barmode="group", title="PRODUCTS")
 
-    fig.update_layout(title_x=.5, margin=dict(t=50, b=0, r=0, l=0))
+    fig.update_layout(title_x=.5, margin=dict(t=50))
 
     return fig
 
@@ -102,7 +102,7 @@ def bar_chart_3_browser(df):
     fig = px.bar(tmp, x='SocialMedia', y="email", color="Funnel",
                  barmode="group", title="REACHABILITY")
 
-    fig.update_layout(title_x=.5, margin=dict(t=50, b=0, r=0, l=0))
+    fig.update_layout(title_x=.5, margin=dict(t=50))
 
     return fig
 

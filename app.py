@@ -113,57 +113,57 @@ app.layout = html.Div([
 
 
 tab1 = dbc.Row([
-    dbc.Col([dcc.Graph(id="fig1-funnel", figure=funnel_chart())],
+    dbc.Col(html.Div([dcc.Graph(id="fig1-funnel", figure=funnel_chart())], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 1, "size": 10},
             lg={"offset": 0, "size": 8}, className="bottom40"),
-    dbc.Col([dcc.Graph(id="fig1-bar")],
+    dbc.Col(html.Div([dcc.Graph(id="fig1-bar")], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 1, "size": 10},
             lg={"offset": 0, "size": 4}, className="bottom40"),
-    dbc.Col([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
-             html.Div(id="tab1-val",
-                      className="width-100")],
+    dbc.Col(html.Div([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
+                      html.Div(id="tab1-val",
+                               className="width-100")]),
             width={"offset": 0, "size": 12},
-            md={"offset": 1, "size": 10},
-            lg={"offset": 1, "size": 10}, className="bottom40")
+            md={"offset": 0, "size": 12},
+            lg={"offset": 0, "size": 12}, className="bottom40")
 ])
 
 
 tab2 = dbc.Row([
-    dbc.Col([dcc.Graph(id="fig2-bar", figure=bar_chart_2(df))],
+    dbc.Col(html.Div([dcc.Graph(id="fig2-bar", figure=bar_chart_2(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 1, "size": 10},
             lg={"offset": 0, "size": 8}, className="bottom40"),
-    dbc.Col([dcc.Graph(id="fig2-bar-prod", figure=bar_chart_2_produc(df))],
+    dbc.Col(html.Div([dcc.Graph(id="fig2-bar-prod", figure=bar_chart_2_produc(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 1, "size": 10},
             lg={"offset": 0, "size": 4}, className="bottom40"),
-    dbc.Col([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
-             html.Div(id="tab2-val",
-                      className="width-100")],
+    dbc.Col(html.Div([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
+                      html.Div(id="tab2-val",
+                               className="width-100")]),
             width={"offset": 0, "size": 12},
-            md={"offset": 1, "size": 10},
-            lg={"offset": 1, "size": 10}, className="bottom40")
+            md={"offset": 0, "size": 12},
+            lg={"offset": 0, "size": 12}, className="bottom40")
 ])
 
 
 tab3 = dbc.Row([
     dbc.Col([html.Div(id="tab3-val",
-                      className="width-100", style={"maxHeight": "330px"})],
+                      className="width-100",)],
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
-            lg={"offset": 1, "size": 10},
+            lg={"offset": 0, "size": 10},
             className="bottom40", style={"minHeight": "350px"}),
-    dbc.Col([dcc.Graph(id="fig3-bar1", figure=bar_chart_3_browser(df))],
+    dbc.Col(html.Div([dcc.Graph(id="fig3-bar1", figure=bar_chart_3_browser(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
-            lg={"offset": 1, "size": 10}, className="bottom40"),
-    dbc.Col([dcc.Graph(id="fig3-sunburst", figure=sunburst(df))],
+            lg={"offset": 0, "size": 12}, className="bottom40"),
+    dbc.Col(html.Div([dcc.Graph(id="fig3-sunburst", figure=sunburst(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 2, "size": 8},
             lg={"offset": 0, "size": 6}, className="bottom40"),
-    dbc.Col([dcc.Graph(id="fig3-bar2", figure=bar_chart_2(df))],
+    dbc.Col(html.Div([dcc.Graph(id="fig3-bar2", figure=bar_chart_2(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
             md={"offset": 2, "size": 8},
             lg={"offset": 0, "size": 6}, className="bottom40")
