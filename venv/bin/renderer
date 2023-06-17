@@ -1,12 +1,10 @@
-#!"/home/leonardo/dash-tests/marketing data/venv/bin/python3.8"
-# EASY-INSTALL-ENTRY-SCRIPT: 'dash==1.13.3','console_scripts','renderer'
-__requires__ = 'dash==1.13.3'
+#!/bin/sh
+'''exec' "/home/leonardo/dash-tests/marketing data/venv/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
 import re
 import sys
-from pkg_resources import load_entry_point
-
+from dash.development.build_process import renderer
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(
-        load_entry_point('dash==1.13.3', 'console_scripts', 'renderer')()
-    )
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(renderer())

@@ -6,17 +6,14 @@ import time
 
 # Dash APP
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
-import dash_table as dt
+from dash import html, dcc, dash_table as dt, Input, Output, State
 import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
+
 from dash.exceptions import PreventUpdate
 from components.navbar import *
 from components.visualizations import *
 from components.utils import *
 from plotly import graph_objects as go
-import dash_trich_components as dtc
 import dash_trich_components as dtc
 
 df = pd.read_csv(
@@ -153,7 +150,7 @@ tab3 = dbc.Row([
                       className="width-100",)],
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
-            lg={"offset": 0, "size": 10},
+            lg={"offset": 0, "size": 12},
             className="bottom40", style={"minHeight": "350px"}),
     dbc.Col(html.Div([dcc.Graph(id="fig3-bar1", figure=bar_chart_3_browser(df))], className="border-bold"),
             width={"offset": 0, "size": 12},
@@ -174,16 +171,16 @@ tab3 = dbc.Row([
               [Input('tabs-styled-with-inline', 'value')])
 def render_content(tab):
     layout = []
-    print("Tab", tab == 'tab-1', tab == 'tab-2', tab == 'tab-3')
+    
 
     if tab == 'tab-1':
-        print("entrou1")
+        
         layout = tab1
     elif tab == 'tab-2':
-        print("entrou2")
+        
         layout = tab2
     elif tab == 'tab-3':
-        print("entrou3")
+        
         layout = tab3
     else:
         layout = html.Div("Not found")
@@ -215,7 +212,7 @@ def render_tab(data, hover):
         filt = hover['points'][0]['y']
         df = df[df["Funnel"] == filt]
 
-    # print(df.head())
+    
     table = table_show(df)
 
     return table
@@ -277,4 +274,4 @@ def toggle_navbar_collapse(n, is_open):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port="8789")
