@@ -120,7 +120,7 @@ tab1 = dbc.Row([
             lg={"offset": 0, "size": 4}, className="bottom40"),
     dbc.Col(html.Div([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
                       html.Div(id="tab1-val",
-                               className="width-100")]),
+                               className="width-100", style={"overflowY":"hidden"})]),
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
             lg={"offset": 0, "size": 12}, className="bottom40")
@@ -138,7 +138,7 @@ tab2 = dbc.Row([
             lg={"offset": 0, "size": 4}, className="bottom40"),
     dbc.Col(html.Div([html.Div("GROUPS WORTH PAYING ATTENTION TO", className="font-lg text-center"),
                       html.Div(id="tab2-val",
-                               className="width-100")]),
+                               className="width-100", style={"overflowY":"hidden"})]),
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
             lg={"offset": 0, "size": 12}, className="bottom40")
@@ -147,7 +147,7 @@ tab2 = dbc.Row([
 
 tab3 = dbc.Row([
     dbc.Col([html.Div(id="tab3-val",
-                      className="width-100",)],
+                      className="width-100", style={"overflowY":"hidden"})],
             width={"offset": 0, "size": 12},
             md={"offset": 0, "size": 12},
             lg={"offset": 0, "size": 12},
